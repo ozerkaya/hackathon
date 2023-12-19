@@ -1,17 +1,19 @@
 ﻿using HackathonDAL;
+using HackathonDAL.Models;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace HackathonAPI.Features.Requests
 {
-    
 
-    public class UsersRequest : IRequest<string>
+
+    public class UsersRequest : IRequest<List<Users>>
     {
-        public string Data { get; set; }
+        public string username { get; set; }
     }
 
     // Request handler class
-    public class MyRequestHandler : IRequestHandler<UsersRequest, string>
+    public class MyRequestHandler : IRequestHandler<UsersRequest, List<Users>>
     {
         private readonly ContextMssql _dbmssql;
         private readonly ContextDapper _dbdapper;
@@ -23,9 +25,9 @@ namespace HackathonAPI.Features.Requests
             _dbdapper = dbdapper;
             _mediator = mediator;
         }
-        public async Task<string> Handle(UsersRequest request, CancellationToken cancellationToken)
+        public async Task<List<Users>> Handle(UsersRequest request, CancellationToken cancellationToken)
         {
-            return "Return Value: " + request.Data;
+            return await _dbmssql.Users.Where(ok => ok.Username == request.username).ToListAsync();
         }
     }
 }

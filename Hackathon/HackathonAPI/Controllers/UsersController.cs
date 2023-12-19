@@ -47,7 +47,7 @@ namespace HackathonAPI.Controllers
         [HttpGet("users/getusers/mediatr")]
         public async Task<IActionResult> GetUsersMediatr(string username)
         {
-            var result = await _mediator.Send(new UsersRequest { Data = username });
+            var result = await _mediator.Send(new UsersRequest { username = username });
             return Ok(result);
         }
     }
