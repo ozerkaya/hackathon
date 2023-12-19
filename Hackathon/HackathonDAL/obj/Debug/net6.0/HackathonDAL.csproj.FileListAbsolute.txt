@@ -1,0 +1,14 @@
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\HackathonDAL.deps.json
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\HackathonDAL.runtimeconfig.json
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\HackathonDAL.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\HackathonDAL.pdb
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.csproj.AssemblyReference.cache
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.AssemblyInfoInputs.cache
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.AssemblyInfo.cs
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.csproj.CoreCompileInputs.cache
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\refint\HackathonDAL.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.pdb
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\HackathonDAL.genruntimeconfig.cache
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\ref\HackathonDAL.dll
