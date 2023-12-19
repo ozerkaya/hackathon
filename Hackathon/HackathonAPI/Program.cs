@@ -1,8 +1,10 @@
 using HackathonDAL;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,12 +15,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
+
+
 builder.Services.AddDbContext<ContextMssql>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Context"));
 });
 
 builder.Services.AddSingleton<ContextDapper>();
+
+
 
 var app = builder.Build();
 

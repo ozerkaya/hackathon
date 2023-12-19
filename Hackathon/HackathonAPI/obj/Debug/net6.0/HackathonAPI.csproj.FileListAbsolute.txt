@@ -99,7 +99,6 @@ C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\De
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
@@ -388,3 +387,7 @@ C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\De
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\Debug\net6.0\HackathonAPI.genruntimeconfig.cache
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\Debug\net6.0\ref\HackathonAPI.dll
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\Dapper.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\MediatR.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

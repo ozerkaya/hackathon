@@ -1,6 +1,8 @@
 using Dapper;
+using HackathonAPI.Features.Requests;
 using HackathonDAL;
 using HackathonDAL.Models;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
@@ -13,11 +15,13 @@ namespace HackathonAPI.Controllers
     {
         private readonly ContextMssql _dbmssql;
         private readonly ContextDapper _dbdapper;
+        private readonly IMediator _mediator;
 
-        public UsersController(ContextMssql dbmssql, ContextDapper dbdapper)
+        public UsersController(ContextMssql dbmssql, ContextDapper dbdapper, IMediator mediator)
         {
             _dbmssql = dbmssql;
             _dbdapper = dbdapper;
+            _mediator = mediator;
         }
 
         [HttpGet("users/getusers")]
@@ -38,6 +42,13 @@ namespace HackathonAPI.Controllers
                 var users = await connection.QueryAsync<Users>(query, parameters);
                 return users.ToList();
             }
+        }
+
+        [HttpGet("users/getusers/mediatr")]
+        public async Task<IActionResult> GetUsersMediatr(string username)
+        {
+            var result = await _mediator.Send(new UsersRequest { Data = username });
+            return Ok(result);
         }
     }
 }
