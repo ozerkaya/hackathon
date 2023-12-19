@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "M2gEx9h2t7lXznOzmmXf8OjwLJllN/ppZCidieudhb9du38vems2Ze5jAGZ9C7xKNcBcxJOPEUxWjtkMWi5/yA==",
+  "dgSpecHash": "itFjcFfM0N5ZQ8u0YqPBhES3nzY90ipJn0rvyYDVTtnTyieSosaKmjMwxeTVUnMLee2CUAFX7zfyvUA1VTmO0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\Hackathon.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ozer.kaya\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",

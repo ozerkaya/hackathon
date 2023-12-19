@@ -18,6 +18,8 @@ builder.Services.AddDbContext<ContextMssql>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Context"));
 });
 
+builder.Services.AddSingleton<ContextDapper>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

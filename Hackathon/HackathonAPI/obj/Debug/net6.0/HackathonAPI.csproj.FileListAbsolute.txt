@@ -387,3 +387,4 @@ C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\De
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\Debug\net6.0\HackathonAPI.pdb
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\Debug\net6.0\HackathonAPI.genruntimeconfig.cache
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\obj\Debug\net6.0\ref\HackathonAPI.dll
+C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonAPI\bin\Debug\net6.0\Dapper.dll

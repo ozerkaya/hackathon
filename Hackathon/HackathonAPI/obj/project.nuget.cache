@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jl9Qc+X7urWG0+r1RDp0iD0G+7GX0dPGXy7H9tH02yg8tnSBDP5w9SscUT412wYOsl+pub3ypurgw5H+5ZM08g==",
+  "dgSpecHash": "EMO8dHcxqCcNydS1v4Am1CmIt6KmnDBOsWTMmK+fs/53nMc9v2flFMaIbXkyxBMoATOG+LiKjGBx/cPC86h8ew==",
   "success": true,
   "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonAPI\\HackathonAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ozer.kaya\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
