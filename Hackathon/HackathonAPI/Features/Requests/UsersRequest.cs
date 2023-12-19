@@ -17,13 +17,11 @@ namespace HackathonAPI.Features.Requests
     {
         private readonly ContextMssql _dbmssql;
         private readonly ContextDapper _dbdapper;
-        private readonly IMediator _mediator;
 
         public MyRequestHandler(ContextMssql dbmssql, ContextDapper dbdapper, IMediator mediator)
         {
             _dbmssql = dbmssql;
             _dbdapper = dbdapper;
-            _mediator = mediator;
         }
         public async Task<List<Users>> Handle(UsersRequest request, CancellationToken cancellationToken)
         {
