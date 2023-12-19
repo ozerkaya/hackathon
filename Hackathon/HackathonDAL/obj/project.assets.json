@@ -2241,9 +2241,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\HackathonDAL.csproj",
-      "projectName": "HackathonDAL",
-      "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\HackathonDAL.csproj",
+      "projectUniqueName": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
+      "projectName": "Hackathon.DAL",
+      "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
       "packagesPath": "C:\\Users\\ozer.kaya\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\obj\\",
       "projectStyle": "PackageReference",

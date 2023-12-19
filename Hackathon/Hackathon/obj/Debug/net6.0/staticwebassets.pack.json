@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Hackathon.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Hackathon.bundle.scp.css"
+      "Id": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Hackathon.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Hackathon.UI.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Hackathon.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Hackathon.UI.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Hackathon.props",
-      "PackagePath": "build\\Hackathon.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Hackathon.UI.props",
+      "PackagePath": "build\\Hackathon.UI.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Hackathon.props",
-      "PackagePath": "buildMultiTargeting\\Hackathon.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Hackathon.UI.props",
+      "PackagePath": "buildMultiTargeting\\Hackathon.UI.props"
     },
     {
-      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Hackathon.props",
-      "PackagePath": "buildTransitive\\Hackathon.props"
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Hackathon.UI.props",
+      "PackagePath": "buildTransitive\\Hackathon.UI.props"
     }
   ],
   "ElementsToRemove": []

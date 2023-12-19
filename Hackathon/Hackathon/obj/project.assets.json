@@ -1172,7 +1172,7 @@
           }
         }
       },
-      "HackathonDAL/1.0.0": {
+      "Hackathon.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1182,10 +1182,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.25"
         },
         "compile": {
-          "bin/placeholder/HackathonDAL.dll": {}
+          "bin/placeholder/Hackathon.DAL.dll": {}
         },
         "runtime": {
-          "bin/placeholder/HackathonDAL.dll": {}
+          "bin/placeholder/Hackathon.DAL.dll": {}
         }
       }
     }
@@ -2969,16 +2969,16 @@
         "version.txt"
       ]
     },
-    "HackathonDAL/1.0.0": {
+    "Hackathon.DAL/1.0.0": {
       "type": "project",
-      "path": "../HackathonDAL/HackathonDAL.csproj",
-      "msbuildProject": "../HackathonDAL/HackathonDAL.csproj"
+      "path": "../HackathonDAL/Hackathon.DAL.csproj",
+      "msbuildProject": "../HackathonDAL/Hackathon.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Dapper >= 2.1.24",
-      "HackathonDAL >= 1.0.0",
+      "Hackathon.DAL >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.25",
       "Microsoft.EntityFrameworkCore >= 6.0.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.25",
@@ -2992,9 +2992,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\Hackathon.csproj",
-      "projectName": "Hackathon",
-      "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\Hackathon.csproj",
+      "projectUniqueName": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\Hackathon.UI.csproj",
+      "projectName": "Hackathon.UI",
+      "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\Hackathon.UI.csproj",
       "packagesPath": "C:\\Users\\ozer.kaya\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\obj\\",
       "projectStyle": "PackageReference",
@@ -3018,8 +3018,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\HackathonDAL.csproj": {
-              "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\HackathonDAL.csproj"
+            "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj": {
+              "projectPath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pLsjfLPw7qavxY9hH5OAyEZwnX9dGs13qFTDBpClBO6ieW7YJHdzQ5G/LraeVu2gOTBXGzVsth2ppHxW+iXcEw==",
+  "dgSpecHash": "YbDw+RLOfGnvGFXCtQgFEpm0LeRYlgdbiM7jMqFKcACwz6g1zTUZisq4GJdfG/hP9LqGkrA+duK414ppaqQqiA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\HackathonDAL.csproj",
+  "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

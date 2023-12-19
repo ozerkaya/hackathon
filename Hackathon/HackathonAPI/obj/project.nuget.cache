@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HUzVmCMLesnhxPLASY4QyRTzsEXNjufFbfPjFOU7Vveuun3qdgHYZRo54quqiFqIgyy5rFigKpBF+Lb0YOyYmQ==",
+  "dgSpecHash": "tFW0CQKkRx5AQG+cdXgquu8WDqi+nbcSYtaffjIiM+evewwUMUqmGtJGJDVLztK+xqg8ZWqqobUAt8PZbxh90Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonAPI\\HackathonAPI.csproj",
+  "projectFilePath": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\HackathonAPI\\Hackathon.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\ozer.kaya\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
