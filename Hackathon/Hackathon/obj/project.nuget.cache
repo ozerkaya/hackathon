@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8rc20SaFw+leA2rUpUSD6CwOkYs9OkSO+ztfSAM/D2g8fOApiPSiwpO9NIVfdKNJMOgxIo7eOFy6xyrbJUwnUw==",
+  "dgSpecHash": "tk1YgWVg3f9v2QYUpjIFaBDOR5O1LOtE87fzPCmhMK+VTH7aNLF490hW7wvmDgVmdlbNzAE+JC0SdhEP885JtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\Hackathon\\Hackathon.UI.csproj",
+  "projectFilePath": "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\Hackathon\\Hackathon.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cagla.ozkan\\.nuget\\packages\\dapper\\2.1.24\\dapper.2.1.24.nupkg.sha512",
     "C:\\Users\\cagla.ozkan\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

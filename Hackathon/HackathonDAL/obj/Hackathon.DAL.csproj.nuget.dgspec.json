@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj": {}
+    "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj": {
+    "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
         "projectName": "Hackathon.DAL",
-        "projectPath": "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
+        "projectPath": "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\HackathonDAL\\Hackathon.DAL.csproj",
         "packagesPath": "C:\\Users\\cagla.ozkan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cagla.ozkan\\Source\\Repos\\hackathon\\Hackathon\\HackathonDAL\\obj\\",
+        "outputPath": "C:\\Users\\cagla.ozkan\\source\\repos\\hackathon\\Hackathon\\HackathonDAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cagla.ozkan\\AppData\\Roaming\\NuGet\\NuGet.Config",
