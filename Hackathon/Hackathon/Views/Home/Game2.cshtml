@@ -4,10 +4,60 @@
     Layout = null;
 }
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
 <style>
+    .btn-two {
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative;
+    }
+
+        .btn-two span {
+            z-index: 2;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-two::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .btn-two::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .btn-two:hover::before {
+            transform: rotate(-45deg);
+            background-color: rgba(255,255,255,0);
+        }
+
+        .btn-two:hover::after {
+            transform: rotate(45deg);
+            background-color: rgba(255,255,255,0);
+        }
+
     html,
     body {
         font-family: "Press Start 2P", cursive;
@@ -26,6 +76,11 @@
     .sky {
         height: 100%;
         background-color: #548cff !important;
+        background: url("/images/back2.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: bottom;
+        background-size: cover;
     }
 
     .ground {
@@ -109,228 +164,237 @@
 
 
 <div class="sky">
-    <div class="row">
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-3">
+            <center><span style="color: #ffffff;font-size:20px;">GAMER1</span></center>
+        </div>
+        <div class="col-6">
+            @*<center><h3 id="soru" style="color: #ffffff;"></h3></center>*@
+        </div>
+        <div class="col-3">
+            <center><span style="color: #ffffff;font-size:20px;">GAMER2</span></center>
+        </div>
+    </div>
+    <div class="row" style="margin-top:40px;">
+        <div class="col-3">
+            <center>
+                <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"> <span class="bottomline-score" id="gamer1Point" style="color: #ffffff;font-size:20px;">0</span>
+            </center>
+        </div>
+        <div class="col-6">
+        </div>
+        <div class="col-3">
+            <center>
+                <span class="bottomline-time" id="gamer2Point" style="color: #ffffff;font-size:20px;">0</span><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40">
+            </center>
+        </div>
         <div class="scorebar">
-            <style>
 
-                .topline-mario {
-                    position: absolute;
-                }
-
-                .topline-world {
-                    position: absolute;
-                    left: 55%;
-                }
-
-                .topline-time {
-                    position: absolute;
-                    left: 80%;
-                }
-
-                .bottomline-score {
-                    position: absolute;
-                    top: 90px;
-                }
-
-                .bottomline-coin {
-                    position: absolute;
-                    top: 80px;
-                    left: 30%;
-                }
-
-                .bottomline-world {
-                    position: absolute;
-                    top: 90px;
-                    left: 55.7%;
-                }
-
-                .bottomline-time {
-                    position: absolute;
-                    top: 90px;
-                    left: 85.5%;
-                }
-            </style>
             <p style="
                padding-top: 20px;">
-                <span class="topline-mario">GAMER1</span>
-                <span class="topline-time">GAMER2</span>
-                <span class="bottomline-score" id="gamer1Point"><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"> 0</span>
-                <span class="bottomline-world">1 - 1</span>
-                <span class="bottomline-time" id="gamer2Point">0 <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"></span>
+
+
+
             </p>
         </div>
     </div>
 
 
-    <body>
 
-        <div>
-            <div class="row">
-
+    <div>
+        <div class="row">
 
 
 
 
-                @* <span class="topline-world" style="font-size:20px;">@Model.GameKey</span>*@
+
+            @* <span class="topline-world" style="font-size:20px;">@Model.GameKey</span>*@
 
 
-            </div>
         </div>
+    </div>
 
-        <center>
-            <p>
-                @Html.HiddenFor(ok => ok.GameKey)
-                @Html.HiddenFor(ok => ok.Gamer1Key)
-                @Html.HiddenFor(ok => ok.Gamer1Question)
-            </p>
+    <center>
+        <p>
+            @Html.HiddenFor(ok => ok.GameKey)
+            @Html.HiddenFor(ok => ok.Gamer1Key)
+            @Html.HiddenFor(ok => ok.Gamer1Question)
+        </p>
 
 
 
-            <canvas class="card-box" width="700" height="400" id="game" style="background-color:black; margin-top: 300px;"></canvas>
-            <p>
-                <h3 id="soru"></h3>
+        <canvas class="card-box" width="400" height="400" id="game" style="background-color:black;border: 10px solid #ffffff;"></canvas>
 
-            </p>
 
-            <p>
-                <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="getQuestion();">Başla</button>
-                <a class="btn btn-lg btn-primary btn-block" href="/Home/Index" style="width:120px;">Yeni</a>
-            </p>
-            <div class="row">
-                <div class="col-3">
-                    <label id="question1"></label>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('A');">A</button>
-                </div>
-                <div class="col-3">
-                    <label id="question2"></label>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('B');">B</button>
-                </div>
-                <div class="col-3">
-                    <label id="question3"></label>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('C');">C</button>
-                </div>
-                <div class="col-3">
-                    <label id="question4"></label>
-                    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('D');">D</button>
-                </div>
-            </div>
-        </center>
+        <p style="margin-top:30px;" id="loginForm">
+           
+            <a class="btn btn-lg btn-two" href="/Home/Index" style="width:120px;">Yeni</a>
 
-        <script>
-            var canvas = document.getElementById('game');
-            var context = canvas.getContext('2d');
-            var grid = 16;
-            var snake = {
-                x: 160,
-                y: 160,
-                dx: grid,
-                dy: 0,
-                cells: [],
-                maxCells: 4
-            };
-            var count = 0;
-            var apple = {
-                x: 320,
-                y: 320
-            };
-            function getRandomInt(min, max) {
-                return Math.floor(Math.random() * (max - min)) + min;
+            <div class="text-center"><button id="openModalBtn" type="button" class="btn btn-color px-5 mb-5 w-100" style="visibility:hidden;" data-toggle="modal" data-target="#loginModal" onclick="getQuestion();">Oyuna Gir </button></div>
+            <button class="btn btn-lg btn-two" type="button" style="width:120px;visibility:hidden;" onclick="getQuestion();">
+                Başla
+            </button>
+        </p>
+
+    </center>
+
+    <script>
+        var canvas = document.getElementById('game');
+        var context = canvas.getContext('2d');
+        var grid = 16;
+        var snake = {
+            x: 160,
+            y: 160,
+            dx: grid,
+            dy: 0,
+            cells: [],
+            maxCells: 10
+        };
+        var count = 0;
+        var apple = {
+            x: 320,
+            y: 320
+        };
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+        // game loop
+        function loop() {
+            requestAnimationFrame(loop);
+            // slow game loop to 15 fps instead of 60 - 60/15 = 4
+            if (++count < 4) {
+                return;
             }
-            // game loop
-            function loop() {
-                requestAnimationFrame(loop);
-                // slow game loop to 15 fps instead of 60 - 60/15 = 4
-                if (++count < 4) {
-                    return;
+            count = 0;
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            snake.x += snake.dx;
+            snake.y += snake.dy;
+            // wrap snake position on edge of screen
+            if (snake.x < 0) {
+                snake.x = canvas.width - grid;
+            }
+            else if (snake.x >= canvas.width) {
+                snake.x = 0;
+            }
+            if (snake.y < 0) {
+                snake.y = canvas.height - grid;
+            }
+            else if (snake.y >= canvas.height) {
+                snake.y = 0;
+            }
+            // keep track of where snake has been. front of the array is always the head
+            snake.cells.unshift({ x: snake.x, y: snake.y });
+            // remove cells as we move away from them
+            if (snake.cells.length > snake.maxCells) {
+                snake.cells.pop();
+            }
+            // draw apple
+            context.fillStyle = 'red';
+            context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
+            // draw snake
+            context.fillStyle = 'green';
+            snake.cells.forEach(function (cell, index) {
+                context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
+                // snake ate apple
+                if (cell.x === apple.x && cell.y === apple.y) {
+                    snake.maxCells++;
+                    apple.x = getRandomInt(0, 25) * grid;
+                    apple.y = getRandomInt(0, 25) * grid;
+                    document.getElementById("openModalBtn").click();
                 }
-                count = 0;
-                context.clearRect(0, 0, canvas.width, canvas.height);
-                snake.x += snake.dx;
-                snake.y += snake.dy;
-                // wrap snake position on edge of screen
-                if (snake.x < 0) {
-                    snake.x = canvas.width - grid;
-                }
-                else if (snake.x >= canvas.width) {
-                    snake.x = 0;
-                }
-                if (snake.y < 0) {
-                    snake.y = canvas.height - grid;
-                }
-                else if (snake.y >= canvas.height) {
-                    snake.y = 0;
-                }
-                // keep track of where snake has been. front of the array is always the head
-                snake.cells.unshift({ x: snake.x, y: snake.y });
-                // remove cells as we move away from them
-                if (snake.cells.length > snake.maxCells) {
-                    snake.cells.pop();
-                }
-                // draw apple
-                context.fillStyle = 'red';
-                context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
-                // draw snake
-                context.fillStyle = 'green';
-                snake.cells.forEach(function (cell, index) {
-                    context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
-                    // snake ate apple
-                    if (cell.x === apple.x && cell.y === apple.y) {
-                        alert("deneme");
-                        snake.maxCells++;
+                // check collision with all cells after this one (modified bubble sort)
+                for (var i = index + 1; i < snake.cells.length; i++) {
+
+                    // collision. reset game
+                    if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+                        snake.x = 160;
+                        snake.y = 160;
+                        snake.cells = [];
+                        snake.maxCells = 4;
+                        snake.dx = grid;
+                        snake.dy = 0;
                         apple.x = getRandomInt(0, 25) * grid;
                         apple.y = getRandomInt(0, 25) * grid;
+                        document.getElementById("openModalBtn").click();
                     }
-                    // check collision with all cells after this one (modified bubble sort)
-                    for (var i = index + 1; i < snake.cells.length; i++) {
-
-                        // collision. reset game
-                        if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                            snake.x = 160;
-                            snake.y = 160;
-                            snake.cells = [];
-                            snake.maxCells = 4;
-                            snake.dx = grid;
-                            snake.dy = 0;
-                            apple.x = getRandomInt(0, 25) * grid;
-                            apple.y = getRandomInt(0, 25) * grid;
-                        }
-                    }
-                });
-            }
-            document.addEventListener('keydown', function (e) {
-                // prevent snake from backtracking on itself
-                if (e.which === 37 && snake.dx === 0) {
-                    snake.dx = -grid;
-                    snake.dy = 0;
-                }
-                else if (e.which === 38 && snake.dy === 0) {
-                    snake.dy = -grid;
-                    snake.dx = 0;
-                }
-                else if (e.which === 39 && snake.dx === 0) {
-                    snake.dx = grid;
-                    snake.dy = 0;
-                }
-                else if (e.which === 40 && snake.dy === 0) {
-                    snake.dy = grid;
-                    snake.dx = 0;
                 }
             });
-            requestAnimationFrame(loop);
-        </script>
-    </body>
+        }
+        document.addEventListener('keydown', function (e) {
+            // prevent snake from backtracking on itself
+            if (e.which === 37 && snake.dx === 0) {
+                snake.dx = -grid;
+                snake.dy = 0;
+            }
+            else if (e.which === 38 && snake.dy === 0) {
+                snake.dy = -grid;
+                snake.dx = 0;
+            }
+            else if (e.which === 39 && snake.dx === 0) {
+                snake.dx = grid;
+                snake.dy = 0;
+            }
+            else if (e.which === 40 && snake.dy === 0) {
+                snake.dy = grid;
+                snake.dx = 0;
+            }
+        });
+        requestAnimationFrame(loop);
+    </script>
+
+
+
+
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="soru"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <center>
+                            <table class="table" style="width:700px;border:none;">
+                                <thead>
+                                    <tr>
+                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('A');">A</button></th>
+                                        <th scope="col" style="border:none;"><label id="question1"></label></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" style="width: 135px;border:none;"> <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('B');">B</button></th>
+                                        <td style="border:none;"><label id="question2"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('C');">C</button></th>
+                                        <td style="border:none;"><label id="question3"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('D');">D</button></th>
+                                        <td style="border:none;"><label id="question4"></label></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </center>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="connectGame();">Onayla</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <script>
     function getQuestion() {
@@ -357,6 +421,8 @@
                 if (result.gamer1Point != undefined) {
                     document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
                 }
+
+                document.getElementById("closeModal").click();
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert("Sıralama işlemi yapılamadı!");
@@ -391,10 +457,22 @@
                     document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
                 }
 
+                document.getElementById("closeModal").click();
+
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert("Sıralama işlemi yapılamadı!");
             }
         });
     }
+
+
+</script>
+
+<script>
+    // Optional: JavaScript to trigger the modal when the form is submitted
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        $('#loginModal').modal('show');
+    });
 </script>
