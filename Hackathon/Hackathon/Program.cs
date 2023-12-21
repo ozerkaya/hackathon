@@ -1,3 +1,5 @@
+using Hackathon.UI.Helpers;
+using Hackathon.UI.Interfaces;
 using HackathonDAL;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +44,8 @@ builder.Services.AddMvc();
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.TryAddSingleton<ContextMssql, ContextMssql>();
 builder.Services.TryAddSingleton<ContextDapper, ContextDapper>();
+builder.Services.AddTransient<IQuestionHelper, QuestionHelper>();
+builder.Services.AddTransient<IGameHelper, GameHelper>();
 
 builder.Services.AddSession(options =>
 {
@@ -66,6 +70,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true) // allow any origin 
+    .AllowCredentials());
 
 app.MapControllerRoute(
     name: "default",

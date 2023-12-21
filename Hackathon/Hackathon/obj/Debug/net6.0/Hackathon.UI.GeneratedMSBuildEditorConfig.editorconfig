@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\Hackathon
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ozer.kaya/source/repos/ozerkaya/hackathon/Hackathon/Hackathon/Views/Home/Game.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYW1lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozer.kaya/source/repos/ozerkaya/hackathon/Hackathon/Hackathon/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
