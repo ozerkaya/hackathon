@@ -227,8 +227,8 @@
 
 
         <p style="margin-top:30px;" id="loginForm">
-           
-            <a class="btn btn-lg btn-two" href="/Home/Index" style="width:120px;">Yeni</a>
+
+            <a class="btn btn-lg btn-two" href="/Home/Index" style="width:120px;">Pes Et !</a>
 
             <div class="text-center"><button id="openModalBtn" type="button" class="btn btn-color px-5 mb-5 w-100" style="visibility:hidden;" data-toggle="modal" data-target="#loginModal" onclick="getQuestion();">Oyuna Gir </button></div>
             <button class="btn btn-lg btn-two" type="button" style="width:120px;visibility:hidden;" onclick="getQuestion();">
@@ -315,7 +315,6 @@
                         snake.dy = 0;
                         apple.x = getRandomInt(0, 25) * grid;
                         apple.y = getRandomInt(0, 25) * grid;
-                        document.getElementById("openModalBtn").click();
                     }
                 }
             });

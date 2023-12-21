@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CB62jEfBeEE8g2flKVWFBILbrZBm5t8XsuilvDXS9f0=",
+  "Hash": "VUvN5YdnFg8u8LnRDKkwjIDDutx1WNv+tGzWzoE2MvY=",
   "Source": "Hackathon.UI",
   "BasePath": "_content/Hackathon.UI",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\back.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\wwwroot\\images\\back2.jpg",
+      "SourceId": "Hackathon.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\wwwroot\\",
+      "BasePath": "_content/Hackathon.UI",
+      "RelativePath": "images/back2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\back2.jpg"
     },
     {
       "Identity": "C:\\Users\\ozer.kaya\\source\\repos\\ozerkaya\\hackathon\\Hackathon\\Hackathon\\wwwroot\\js\\site.js",
