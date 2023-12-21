@@ -12,3 +12,17 @@ C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\De
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.pdb
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.genruntimeconfig.cache
 C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\ref\Hackathon.DAL.dll
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\Hackathon.DAL.deps.json
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\Hackathon.DAL.runtimeconfig.json
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\Hackathon.DAL.dll
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\bin\Debug\net6.0\Hackathon.DAL.pdb
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.csproj.AssemblyReference.cache
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.AssemblyInfoInputs.cache
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.AssemblyInfo.cs
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.csproj.CoreCompileInputs.cache
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.dll
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\refint\Hackathon.DAL.dll
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.pdb
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\Hackathon.DAL.genruntimeconfig.cache
+C:\Users\cagla.ozkan\Source\Repos\hackathon\Hackathon\HackathonDAL\obj\Debug\net6.0\ref\Hackathon.DAL.dll
