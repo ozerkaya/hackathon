@@ -1,4 +1,5 @@
 ﻿using Hackathon.API.Interfaces;
+using Hackathon.API.Models;
 using Hackathon.DAL.Models;
 using HackathonDAL;
 using MediatR;
@@ -27,13 +28,13 @@ namespace Hackathon.API.Controllers
         }
 
         [HttpGet("questions/new")]
-        public async Task<Questions> GetQuestions(Guid gameID, Guid gamerID)
+        public async Task<QuestionReturnModel> GetQuestions(Guid gameID, Guid gamerID)
         {
             return await _questionHelper.GetQuestions(gameID, gamerID);
         }
 
         [HttpPost("questions/answer")]
-        public async Task<Questions> SetAnswer(Guid gameID, Guid gamerID, int questionNumber, string answer)
+        public async Task<QuestionReturnModel> SetAnswer(Guid gameID, Guid gamerID, int questionNumber, string answer)
         {
             return await _questionHelper.SetAnswer(gameID, gamerID, questionNumber, answer);
         }
