@@ -1,0 +1,132 @@
+﻿@model Hackathon.UI.Models.QuestionReturnModel
+
+
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+                <h3 id="gamer1Point" style="float:left;"></h3>
+            </div>
+            <div class="col-4 text-center">
+                <a class="blog-header-logo text-dark" href="#">@Model.GameKey</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <h3 id="gamer2Point"></h3>
+            </div>
+        </div>
+    </header>
+</div>
+
+
+
+
+<body class="text-center">
+
+
+
+    @Html.HiddenFor(ok => ok.GameKey)
+    @Html.HiddenFor(ok => ok.Gamer1Key)
+    @Html.HiddenFor(ok => ok.Gamer1Question)
+
+
+
+
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="getQuestion();">Başla</button>
+    <a class="btn btn-lg btn-primary btn-block" href="/Home/Index" style="width:120px;">Yeni</a>
+
+    <div class="row">
+        <div class="col-12">
+            <h3 id="soru"></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <label id="question1"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('A');">A</button>
+        </div>
+        <div class="col-3">
+            <label id="question2"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('B');">B</button>
+        </div>
+        <div class="col-3">
+            <label id="question3"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('C');">C</button>
+        </div>
+        <div class="col-3">
+            <label id="question4"></label>
+            <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('D');">D</button>
+        </div>
+    </div>
+</body>
+
+
+
+
+<script>
+    function getQuestion() {
+
+        let gameID = document.getElementById("GameKey").value;
+        let gamerID = document.getElementById("Gamer1Key").value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Questions/GetQuestions',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ gameID, gamerID }),
+            success: function (result) {
+
+                document.getElementById('soru').innerHTML = result.questionTR;
+                document.getElementById('question1').innerHTML = result.choiseA;
+                document.getElementById('question2').innerHTML = result.choiseB;
+                document.getElementById('question3').innerHTML = result.choiseC;
+                document.getElementById('question4').innerHTML = result.choiseD;
+
+                if (result.gamer1Point != undefined) {
+                    document.getElementById('gamer1Point').innerHTML = result.gamer1Point;
+                }
+                if (result.gamer1Point != undefined) {
+                    document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert("Sıralama işlemi yapılamadı!");
+            }
+        });
+    }
+
+    function setQuestion(answer) {
+
+        let gameID = document.getElementById("GameKey").value;
+        let gamerID = document.getElementById("Gamer1Key").value;
+        let questionNumber = document.getElementById("Gamer1Question").value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Questions/SetAnswer',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ gameID, gamerID, questionNumber, answer }),
+            success: function (result) {
+
+                document.getElementById('soru').innerHTML = result.questionTR;
+                document.getElementById('question1').innerHTML = result.choiseA;
+                document.getElementById('question2').innerHTML = result.choiseB;
+                document.getElementById('question3').innerHTML = result.choiseC;
+                document.getElementById('question4').innerHTML = result.choiseD;
+                document.getElementById('Gamer1Question').value = result.gamer1Question;
+
+                if (result.gamer1Point != undefined) {
+                    document.getElementById('gamer1Point').innerHTML = result.gamer1Point;
+                }
+                if (result.gamer1Point != undefined) {
+                    document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
+                }
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert("Sıralama işlemi yapılamadı!");
+            }
+        });
+    }
+</script>

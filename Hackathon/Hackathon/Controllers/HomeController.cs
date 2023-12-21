@@ -42,5 +42,16 @@ namespace Hackathon.Controllers
             return View(model);
         }
 
+        public IActionResult Game2(string GameKey)
+        {
+            QuestionReturnModel model = new QuestionReturnModel
+            {
+                GameKey = Guid.Parse(GameKey),
+                Gamer1Key = Guid.Parse(_dbmssql.Games.FirstOrDefault(ok => ok.GameKey == Guid.Parse(GameKey)).Gamer2Key.ToString()),
+                Gamer1Question = 1
+            };
+            return View(model);
+        }
+
     }
 }
