@@ -17,5 +17,9 @@ namespace Hackathon.DAL.Models
         public string? QuestionEN { get; set; }
         [StringLength(1)]
         public string? Answer { get; set; }
+        public string? ChoiseA { get; set; }
+        public string? ChoiseB { get; set; }
+        public string? ChoiseC { get; set; }
+        public string? ChoiseD { get; set; }
     }
 }

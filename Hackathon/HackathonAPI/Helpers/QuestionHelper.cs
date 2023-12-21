@@ -57,6 +57,12 @@ namespace Hackathon.API.Helpers
                 }
 
                 game.Gamer1Question++;
+
+                if (game.Gamer1Question == 10)
+                {
+                    game.Gamer1Finish = true;
+                }
+
                 _dbmssql.Games.Attach(game);
                 _dbmssql.Entry(game).State = EntityState.Modified;
                 _dbmssql.SaveChanges();
@@ -69,6 +75,12 @@ namespace Hackathon.API.Helpers
                 }
 
                 game.Gamer2Question++;
+
+                if (game.Gamer2Question == 10)
+                {
+                    game.Gamer2Finish = true;
+                }
+
                 _dbmssql.Games.Attach(game);
                 _dbmssql.Entry(game).State = EntityState.Modified;
                 _dbmssql.SaveChanges();
@@ -91,14 +103,22 @@ namespace Hackathon.API.Helpers
                     QuestionNumber = questions.QuestionNumber,
                     QuestionTR = questions.QuestionTR,
                     QuestionEN = questions.QuestionEN,
-                    Answer = questions.Answer,
+
+                    ChoiseA = questions.ChoiseA,
+                    ChoiseB = questions.ChoiseB,
+                    ChoiseC = questions.ChoiseC,
+                    ChoiseD = questions.ChoiseD,
+
+
                     GameKey = games.GameKey,
                     Gamer1Key = games.Gamer1Key,
                     Gamer2Key = games.Gamer2Key,
                     Gamer1Point = games.Gamer1Point,
                     Gamer2Point = games.Gamer2Point,
                     Gamer1Question = games.Gamer1Question,
-                    Gamer2Question = games.Gamer2Question
+                    Gamer2Question = games.Gamer2Question,
+                    Gamer1Finish = games.Gamer1Finish,
+                    Gamer2Finish = games.Gamer2Finish,
                 };
             }
 

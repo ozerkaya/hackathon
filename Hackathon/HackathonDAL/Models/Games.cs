@@ -18,5 +18,7 @@ namespace Hackathon.DAL.Models
         public int Gamer2Point { get; set; }
         public int Gamer1Question { get; set; }
         public int Gamer2Question { get; set; }
+        public bool Gamer1Finish { get; set; }
+        public bool Gamer2Finish { get; set; }
     }
 }
