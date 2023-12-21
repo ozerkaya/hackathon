@@ -19,8 +19,4 @@
     <ProjectReference Include="..\HackathonDAL\Hackathon.DAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="OAuth\" />
-  </ItemGroup>
-
 </Project>

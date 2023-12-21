@@ -12,6 +12,7 @@ namespace Hackathon.DAL.Models
     public class Questions
     {
         public int ID { get; set; }
+        public int QuestionNumber { get; set; }
         public string? QuestionTR { get; set; }
         public string? QuestionEN { get; set; }
         [StringLength(1)]

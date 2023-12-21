@@ -36,7 +36,7 @@ namespace Hackathon.API.Controllers
 
             });
             await _dbmssql.SaveChangesAsync();
-            var game = _dbmssql.Games.FirstOrDefault(ok => ok.GameKey == gameKey);
+            var game = await _dbmssql.Games.FirstOrDefaultAsync(ok => ok.GameKey == gameKey);
 
             if (game != null)
             {
@@ -48,24 +48,5 @@ namespace Hackathon.API.Controllers
             }
         }
 
-        [HttpGet("users/getusers/dapper")]
-        public async Task<IList<Users>> GetUsersDapper(string username)
-        {
-            using (var connection = _dbdapper.CreateConnection())
-            {
-                var query = "SELECT TOP(1) * FROM Users where Username=@Username";
-                var parameters = new DynamicParameters();
-                parameters.Add("Username", username, DbType.String);
-
-                var users = await connection.QueryAsync<Users>(query, parameters);
-                return users.ToList();
-            }
-        }
-
-        [HttpGet("users/getusers/mediatr")]
-        public async Task<List<Users>> GetUsersMediatr(string username)
-        {
-            return await _mediator.Send(new UsersRequest { username = username });
-        }
     }
 }
