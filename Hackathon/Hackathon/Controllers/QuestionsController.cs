@@ -20,16 +20,13 @@ namespace Hackathon.UI.Controllers
             _questionHelper = questionHelper;
         }
 
-        [HttpGet("questions/new")]
-        public async Task<QuestionReturnModel> GetQuestions(Guid gameID, Guid gamerID)
+        public async Task<QuestionReturnModel> GetQuestions([FromBody] GameRequestMode dataModel)
         {
-            return await _questionHelper.GetQuestions(gameID, gamerID);
+            return await _questionHelper.GetQuestions(Guid.Parse(dataModel.gameID), Guid.Parse(dataModel.gamerID));
         }
-
-        [HttpPost("questions/answer")]
-        public async Task<QuestionReturnModel> SetAnswer(Guid gameID, Guid gamerID, int questionNumber, string answer)
+        public async Task<QuestionReturnModel> SetAnswer([FromBody] SetAnswerModel dataModel)
         {
-            return await _questionHelper.SetAnswer(gameID, gamerID, questionNumber, answer);
+            return await _questionHelper.SetAnswer(Guid.Parse(dataModel.gameID), Guid.Parse(dataModel.gamerID), dataModel.questionNumber, dataModel.answer);
         }
 
     }

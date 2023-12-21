@@ -1,1 +1,270 @@
-﻿
+﻿@model Hackathon.UI.Models.QuestionReturnModel
+
+@{
+    Layout = null;
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<style>
+    html,
+    body {
+        font-family: "Press Start 2P", cursive;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sky,
+    .ground {
+        position: relative;
+    }
+
+    .sky {
+        height: 90%;
+        background-color: #548cff !important;
+    }
+
+    .ground {
+        height: 10%;
+        background-color: #c84c0c;
+        background-image: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/groundblock.png");
+    }
+
+    .scorebar {
+        position: absolute;
+        height: 120px;
+        width: 100%;
+        font-family: "Press Start 2P", cursive;
+        font-size: 180%;
+        color: white;
+        padding-left: 50px;
+        padding-right: 50px;
+        line-height: 0.2;
+    }
+
+    .cloud {
+        position: absolute;
+        height: 100px;
+    }
+
+        .cloud:nth-child(2) {
+            top: 120px;
+            -webkit-animation: wind 80s both infinite linear reverse;
+            animation: wind 80s both infinite linear reverse;
+        }
+
+        .cloud:nth-child(3) {
+            top: 280px;
+            -webkit-animation: wind 50s both infinite linear reverse;
+            animation: wind 50s both infinite linear reverse;
+        }
+
+        .cloud:nth-child(4) {
+            top: 450px;
+            -webkit-animation: wind 30s both infinite linear reverse;
+            animation: wind 30s both infinite linear reverse;
+        }
+
+    .skyblocks {
+        position: absolute;
+        top: -250px;
+    }
+
+    .brick {
+        position: fixed;
+        margin: -2px;
+    }
+
+        .brick:nth-child(1) {
+            left: 600px;
+        }
+
+        .brick:nth-child(2) {
+            left: 670px;
+        }
+
+        .brick:nth-child(3) {
+            left: 740px;
+        }
+
+        .brick:nth-child(4) {
+            left: 810px;
+        }
+
+    .mario {
+        position: absolute;
+        width: 71px;
+        height: 72px;
+        background: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/mariowalking/result.png") left center;
+        top: -70px;
+        left: 0px;
+        -webkit-animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+        animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+    }
+</style>
+
+
+<div class="sky">
+    <div class="row">
+        <div class="scorebar">
+            <style>
+
+                .topline-mario {
+                    position: absolute;
+                }
+
+                .topline-world {
+                    position: absolute;
+                    left: 55%;
+                }
+
+                .topline-time {
+                    position: absolute;
+                    left: 85%;
+                }
+
+                .bottomline-score {
+                    position: absolute;
+                    top: 90px;
+                }
+
+                .bottomline-coin {
+                    position: absolute;
+                    top: 80px;
+                    left: 30%;
+                }
+
+                .bottomline-world {
+                    position: absolute;
+                    top: 90px;
+                    left: 55.7%;
+                }
+
+                .bottomline-time {
+                    position: absolute;
+                    top: 90px;
+                    left: 85.5%;
+                }
+            </style>
+            <p>
+                <span class="topline-mario">MARIO</span>
+                <span class="topline-world">WORLD</span>
+                <span class="topline-time">TIME</span>
+                <span class="bottomline-score">OOOOOO</span>
+                <span class="bottomline-coin"><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40px"> x OO</span>
+                <span class="bottomline-world">1 - 1</span>
+                <span class="bottomline-time">111</span>
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        @Html.HiddenFor(ok => ok.GameKey)
+        @Html.HiddenFor(ok => ok.Gamer1Key)
+        @Html.HiddenFor(ok => ok.Gamer1Question)
+
+
+        <label id="myPuan"></label>
+
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="getQuestion();">Başla</button>
+        <a class="btn btn-lg btn-primary btn-block" href="/Home/Index" style="width:120px;">Yeni</a>
+
+        <div class="row">
+            <div class="col-12">
+                <h3 id="soru"></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <label id="question1"></label>
+                <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('A');">A</button>
+            </div>
+            <div class="col-3">
+                <label id="question2"></label>
+                <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('B');">B</button>
+            </div>
+            <div class="col-3">
+                <label id="question3"></label>
+                <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('C');">C</button>
+            </div>
+            <div class="col-3">
+                <label id="question4"></label>
+                <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('D');">D</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    function getQuestion() {
+
+        let gameID = document.getElementById("GameKey").value;
+        let gamerID = document.getElementById("Gamer1Key").value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Questions/GetQuestions',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ gameID, gamerID }),
+            success: function (result) {
+
+                document.getElementById('soru').innerHTML = result.questionTR;
+                document.getElementById('question1').innerHTML = result.choiseA;
+                document.getElementById('question2').innerHTML = result.choiseB;
+                document.getElementById('question3').innerHTML = result.choiseC;
+                document.getElementById('question4').innerHTML = result.choiseD;
+                document.getElementById('myPuan').innerHTML = result.Gamer1Point;
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert("Sıralama işlemi yapılamadı!");
+            }
+        });
+    }
+
+    function setQuestion(answer) {
+
+        let gameID = document.getElementById("GameKey").value;
+        let gamerID = document.getElementById("Gamer1Key").value;
+        let questionNumber = document.getElementById("Gamer1Question").value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/Questions/SetAnswer',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ gameID, gamerID, questionNumber, answer }),
+            success: function (result) {
+
+                document.getElementById('soru').innerHTML = result.questionTR;
+                document.getElementById('myPuan').innerHTML = result.gamer1Point;
+                document.getElementById('question1').innerHTML = result.choiseA;
+                document.getElementById('question2').innerHTML = result.choiseB;
+                document.getElementById('question3').innerHTML = result.choiseC;
+                document.getElementById('question4').innerHTML = result.choiseD;
+                document.getElementById('Gamer1Question').value = result.gamer1Question;
+
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert("Sıralama işlemi yapılamadı!");
+            }
+        });
+    }
+</script>
+
+
+

@@ -1,4 +1,5 @@
 ﻿using Hackathon.Models;
+using Hackathon.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -20,7 +21,13 @@ namespace Hackathon.Controllers
 
         public IActionResult Game(string GameKey, string GamerKey)
         {
-            return View();
+            QuestionReturnModel model = new QuestionReturnModel
+            {
+                GameKey = Guid.Parse(GameKey),
+                Gamer1Key = Guid.Parse(GamerKey),
+                Gamer1Question = 1
+            };
+            return View(model);
         }
 
     }
