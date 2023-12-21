@@ -4,6 +4,7 @@ using HackathonDAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HackathonDAL.Migrations
 {
     [DbContext(typeof(ContextMssql))]
-    partial class ContextMssqlModelSnapshot : ModelSnapshot
+    [Migration("20231221154202_ver6")]
+    partial class ver6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,8 +35,8 @@ namespace HackathonDAL.Migrations
                     b.Property<Guid>("GameKey")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<bool>("Gamer1Finish")
-                        .HasColumnType("bit");
+                    b.Property<int>("Gamer1Finish")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("Gamer1Key")
                         .HasColumnType("uniqueidentifier");
@@ -45,8 +47,8 @@ namespace HackathonDAL.Migrations
                     b.Property<int>("Gamer1Question")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Gamer2Finish")
-                        .HasColumnType("bit");
+                    b.Property<int>("Gamer2Finish")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("Gamer2Key")
                         .HasColumnType("uniqueidentifier");
@@ -73,18 +75,6 @@ namespace HackathonDAL.Migrations
                     b.Property<string>("Answer")
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
-
-                    b.Property<string>("ChoiseA")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ChoiseB")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ChoiseC")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ChoiseD")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("QuestionEN")
                         .HasColumnType("nvarchar(max)");

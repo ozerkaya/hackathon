@@ -1,3 +1,5 @@
+using Hackathon.API.Helpers;
+using Hackathon.API.Interfaces;
 using HackathonDAL;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -24,7 +26,8 @@ builder.Services.AddDbContext<ContextMssql>(options =>
 });
 
 builder.Services.AddSingleton<ContextDapper>();
-
+builder.Services.AddTransient<IQuestionHelper, QuestionHelper>();
+builder.Services.AddTransient<IGameHelper, GameHelper>();
 
 
 var app = builder.Build();
