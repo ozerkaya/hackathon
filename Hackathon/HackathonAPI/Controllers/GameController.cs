@@ -7,45 +7,34 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using Hackathon.DAL.Models;
+using Hackathon.API.Helpers;
+using Hackathon.API.Interfaces;
 
 namespace Hackathon.API.Controllers
 {
     [ApiController]
     public class GameController : ControllerBase
     {
+        private readonly IGameHelper _gameHelper;
         private readonly ContextMssql _dbmssql;
         private readonly ContextDapper _dbdapper;
         private readonly IMediator _mediator;
 
-        public GameController(ContextMssql dbmssql, ContextDapper dbdapper, IMediator mediator)
+        public GameController(ContextMssql dbmssql,
+            ContextDapper dbdapper,
+            IMediator mediator,
+            IGameHelper gameHelper)
         {
             _dbmssql = dbmssql;
             _dbdapper = dbdapper;
             _mediator = mediator;
+            _gameHelper = gameHelper;
         }
 
         [HttpPost("game/create")]
         public async Task<Games> CreateGame()
         {
-            var gameKey = Guid.NewGuid();
-            _dbmssql.Games.Add(new Games
-            {
-                GameKey = gameKey,
-                Gamer1Key = Guid.NewGuid(),
-                Gamer2Key = Guid.NewGuid(),
-
-            });
-            await _dbmssql.SaveChangesAsync();
-            var game = await _dbmssql.Games.FirstOrDefaultAsync(ok => ok.GameKey == gameKey);
-
-            if (game != null)
-            {
-                return game;
-            }
-            else
-            {
-                return new Games();
-            }
+            return await _gameHelper.CreateGame();
         }
 
     }

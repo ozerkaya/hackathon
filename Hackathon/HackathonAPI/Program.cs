@@ -27,7 +27,7 @@ builder.Services.AddDbContext<ContextMssql>(options =>
 
 builder.Services.AddSingleton<ContextDapper>();
 builder.Services.AddTransient<IQuestionHelper, QuestionHelper>();
-
+builder.Services.AddTransient<IGameHelper, GameHelper>();
 
 
 var app = builder.Build();

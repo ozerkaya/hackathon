@@ -17,5 +17,6 @@ namespace Hackathon.API.Models
         public int Gamer2Point { get; set; }
         public int Gamer1Question { get; set; }
         public int Gamer2Question { get; set; }
+        public bool GameFinish { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace Hackathon.API.Helpers
             if (game.Gamer1Key == gamerID)
             {
                 var question = await _dbmssql.Questions.FirstOrDefaultAsync(ok => ok.QuestionNumber == game.Gamer1Question);
+
                 return MergeQuestions(game, question);
             }
             else if (game.Gamer2Key == gamerID)
@@ -78,21 +79,28 @@ namespace Hackathon.API.Helpers
 
         public QuestionReturnModel MergeQuestions(Games games, Questions questions)
         {
-            return new QuestionReturnModel
+            if (games == null || questions == null)
             {
-                ID = games.ID,
-                QuestionNumber = questions.QuestionNumber,
-                QuestionTR = questions.QuestionTR,
-                QuestionEN = questions.QuestionEN,
-                Answer = questions.Answer,
-                GameKey = games.GameKey,
-                Gamer1Key = games.Gamer1Key,
-                Gamer2Key = games.Gamer2Key,
-                Gamer1Point = games.Gamer1Point,
-                Gamer2Point = games.Gamer2Point,
-                Gamer1Question = games.Gamer1Question,
-                Gamer2Question = games.Gamer2Question
-            };
+                return new QuestionReturnModel();
+            }
+            else
+            {
+                return new QuestionReturnModel
+                {
+                    ID = games.ID,
+                    QuestionNumber = questions.QuestionNumber,
+                    QuestionTR = questions.QuestionTR,
+                    QuestionEN = questions.QuestionEN,
+                    Answer = questions.Answer,
+                    GameKey = games.GameKey,
+                    Gamer1Key = games.Gamer1Key,
+                    Gamer2Key = games.Gamer2Key,
+                    Gamer1Point = games.Gamer1Point,
+                    Gamer2Point = games.Gamer2Point,
+                    Gamer1Question = games.Gamer1Question,
+                    Gamer2Question = games.Gamer2Question
+                };
+            }
 
         }
     }
