@@ -1,4 +1,5 @@
-﻿using HackathonDAL.Models;
+﻿using Hackathon.DAL.Models;
+using HackathonDAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HackathonDAL
@@ -10,6 +11,8 @@ namespace HackathonDAL
         }
 
         public DbSet<Users> Users { get; set; }
+        public DbSet<Questions> Questions { get; set; }
+        public DbSet<Games> Games { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

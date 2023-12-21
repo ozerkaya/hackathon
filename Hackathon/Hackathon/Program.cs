@@ -41,6 +41,7 @@ builder.Services.AddMvc();
 
 builder.Services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.TryAddSingleton<ContextMssql, ContextMssql>();
+builder.Services.TryAddSingleton<ContextDapper, ContextDapper>();
 
 builder.Services.AddSession(options =>
 {

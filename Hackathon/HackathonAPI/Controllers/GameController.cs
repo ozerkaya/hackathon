@@ -1,0 +1,71 @@
+﻿using Dapper;
+using HackathonAPI.Features.Requests;
+using HackathonDAL.Models;
+using HackathonDAL;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
+using Hackathon.DAL.Models;
+
+namespace Hackathon.API.Controllers
+{
+    [ApiController]
+    public class GameController : ControllerBase
+    {
+        private readonly ContextMssql _dbmssql;
+        private readonly ContextDapper _dbdapper;
+        private readonly IMediator _mediator;
+
+        public GameController(ContextMssql dbmssql, ContextDapper dbdapper, IMediator mediator)
+        {
+            _dbmssql = dbmssql;
+            _dbdapper = dbdapper;
+            _mediator = mediator;
+        }
+
+        [HttpPost("game/create")]
+        public async Task<Games> CreateGame()
+        {
+            var gameKey = Guid.NewGuid();
+            _dbmssql.Games.Add(new Games
+            {
+                GameKey = gameKey,
+                Gamer1Key = Guid.NewGuid(),
+                Gamer2Key = Guid.NewGuid(),
+
+            });
+            await _dbmssql.SaveChangesAsync();
+            var game = _dbmssql.Games.FirstOrDefault(ok => ok.GameKey == gameKey);
+
+            if (game != null)
+            {
+                return game;
+            }
+            else
+            {
+                return new Games();
+            }
+        }
+
+        [HttpGet("users/getusers/dapper")]
+        public async Task<IList<Users>> GetUsersDapper(string username)
+        {
+            using (var connection = _dbdapper.CreateConnection())
+            {
+                var query = "SELECT TOP(1) * FROM Users where Username=@Username";
+                var parameters = new DynamicParameters();
+                parameters.Add("Username", username, DbType.String);
+
+                var users = await connection.QueryAsync<Users>(query, parameters);
+                return users.ToList();
+            }
+        }
+
+        [HttpGet("users/getusers/mediatr")]
+        public async Task<List<Users>> GetUsersMediatr(string username)
+        {
+            return await _mediator.Send(new UsersRequest { username = username });
+        }
+    }
+}
