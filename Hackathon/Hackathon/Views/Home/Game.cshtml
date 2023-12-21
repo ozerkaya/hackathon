@@ -110,53 +110,36 @@
 
 <div class="sky">
     <div class="row">
+        <div class="col-3">
+            <center><span style="color: #ffffff;font-size:20px;">GAMER1</span></center>
+        </div>
+        <div class="col-6">
+            <center><h3 id="soru"></h3></center>
+        </div>
+        <div class="col-3">
+            <center><span style="color: #ffffff;font-size:20px;">GAMER2</span></center>
+        </div>
+    </div>
+    <div class="row" style="margin-top:40px;">
+        <div class="col-3">
+            <center>
+                <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"> <span class="bottomline-score" id="gamer1Point" style="color: #ffffff;font-size:20px;">0</span>
+            </center>
+        </div>
+        <div class="col-6">
+        </div>
+        <div class="col-3">
+            <center>
+                <span class="bottomline-time" id="gamer2Point" style="color: #ffffff;font-size:20px;">0</span><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40">
+            </center>
+        </div>
         <div class="scorebar">
-            <style>
-
-                .topline-mario {
-                    position: absolute;
-                }
-
-                .topline-world {
-                    position: absolute;
-                    left: 55%;
-                }
-
-                .topline-time {
-                    position: absolute;
-                    left: 80%;
-                }
-
-                .bottomline-score {
-                    position: absolute;
-                    top: 90px;
-                }
-
-                .bottomline-coin {
-                    position: absolute;
-                    top: 80px;
-                    left: 30%;
-                }
-
-                .bottomline-world {
-                    position: absolute;
-                    top: 90px;
-                    left: 55.7%;
-                }
-
-                .bottomline-time {
-                    position: absolute;
-                    top: 90px;
-                    left: 85.5%;
-                }
-            </style>
+        
             <p style="
                padding-top: 20px;">
-                <span class="topline-mario">GAMER1</span>
-                <span class="topline-time">GAMER2</span>
-                <span class="bottomline-score" id="gamer1Point"><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"> 0</span>
-                <span class="bottomline-world">1 - 1</span>
-                <span class="bottomline-time" id="gamer2Point">0 <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"></span>
+
+
+               
             </p>
         </div>
     </div>
@@ -187,10 +170,7 @@
           
 
             <canvas class="card-box" width="700" height="400" id="game" style="background-color:black; margin-top: 300px;"></canvas>
-              <p>
-                    <h3 id="soru"></h3>
-                
-            </p>
+            
 
             <p>
                 <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="getQuestion();">Başla</button>
@@ -321,15 +301,6 @@
     </body>
 
 </div>
-
-
-
-
-
-
-
-
-
 
 
 <script>

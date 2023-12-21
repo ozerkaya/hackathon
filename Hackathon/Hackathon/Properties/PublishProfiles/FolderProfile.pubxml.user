@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\ozer.kaya\source\repos\ozerkaya\hackathon\Hackathon\Hackathon\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2023-12-21T21:17:02.7263288Z;</History>
+    <History>True|2023-12-21T22:04:54.6752783Z;True|2023-12-22T00:17:02.7263288+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
