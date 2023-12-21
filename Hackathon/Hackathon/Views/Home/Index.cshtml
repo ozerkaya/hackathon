@@ -1,23 +1,96 @@
-﻿<body class="text-center">
+﻿<!DOCTYPE html>
+<html lang="en">
 
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please select</h1>
-    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="createGame();">Create</button>
-    <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="connectGame();">Connect</button>
-    <center>
-        <input id="friendKey" class="form-control" style="margin:20px;width:250px;">
-    </center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
 
-    <p class="mt-5 mb-3 text-muted">&copy;Copy Right Kill-Bill</p>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
 
-    <a href="https://api.whatsapp.com/send?text=https://localhost:7089/Home/Game?GameKey=5b6dd01e-5224-4c7c-ba16-ae21d015ea23" target="_blank" class="btn btn-xs btn-success" onclick="return confirm('Are you sure you want to share?');">Share</a>
+        .profile-image-pic {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border: 2px solid #0e1c36;
+        }
 
+        .cardbody-color {
+            background-color: #ebf2fa;
+        }
 
-</body>
+        .btn-color {
+            background-color: #0e1c36;
+            color: #fff;
+        }
 
+            .btn-color:hover {
+                background-color: #00152e;
+                color: #fff;
+            }
 
-<script>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" style="margin-top: 150px;">
+                <div class="card my-5">
+
+                    <form class="card-body cardbody-color p-lg-5" id="loginForm">
+
+                        <div class="text-center">
+                            <img src="https://e1.pxfuel.com/desktop-wallpaper/762/285/desktop-wallpaper-4-moving-snake-cartoon-snake.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" alt="profile">
+                        </div>
+
+                        <div class="text-center"><button type="button" class="btn btn-color px-5 mb-5 w-100" onclick="createGame();">Oyun Oluştur</button></div>
+                        <div class="text-center"><button type="button" class="btn btn-color px-5 mb-5 w-100" data-toggle="modal" data-target="#loginModal">Oyuna Gir </button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Oyuna Giriş Yap!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="friendKey">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="connectGame();">Onayla</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
     function createGame() {
 
         $.ajax({
@@ -51,4 +124,14 @@
     }
 </script>
 
+    <script>
+        // Optional: JavaScript to trigger the modal when the form is submitted
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            $('#loginModal').modal('show');
+        });
+    </script>
 
+</body>
+
+</html>
