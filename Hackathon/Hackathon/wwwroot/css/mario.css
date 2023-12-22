@@ -1,0 +1,219 @@
+﻿.btn-two {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+}
+
+    .btn-two span {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-two::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .btn-two::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .btn-two:hover::before {
+        transform: rotate(-45deg);
+        background-color: rgba(255,255,255,0);
+    }
+
+    .btn-two:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(255,255,255,0);
+    }
+
+html,
+body {
+   
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.sky,
+.ground {
+    position: relative;
+}
+
+.sky {
+    height: 100%;
+    background-color: #548cff !important;
+    background: url("/images/back2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.ground {
+    height: 10%;
+    background-color: #c84c0c;
+    background-image: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/groundblock.png");
+}
+
+.scorebar {
+    position: absolute;
+    height: 120px;
+    width: 100%;
+    font-family: "Press Start 2P", cursive;
+    font-size: 180%;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    line-height: 0.2;
+}
+
+.cloud {
+    position: absolute;
+    height: 100px;
+}
+
+    .cloud:nth-child(2) {
+        top: 120px;
+        -webkit-animation: wind 80s both infinite linear reverse;
+        animation: wind 80s both infinite linear reverse;
+    }
+
+    .cloud:nth-child(3) {
+        top: 280px;
+        -webkit-animation: wind 50s both infinite linear reverse;
+        animation: wind 50s both infinite linear reverse;
+    }
+
+    .cloud:nth-child(4) {
+        top: 450px;
+        -webkit-animation: wind 30s both infinite linear reverse;
+        animation: wind 30s both infinite linear reverse;
+    }
+
+.skyblocks {
+    position: absolute;
+    top: -250px;
+}
+
+.brick {
+    position: fixed;
+    margin: -2px;
+}
+
+    .brick:nth-child(1) {
+        left: 600px;
+    }
+
+    .brick:nth-child(2) {
+        left: 670px;
+    }
+
+    .brick:nth-child(3) {
+        left: 740px;
+    }
+
+    .brick:nth-child(4) {
+        left: 810px;
+    }
+
+.mario {
+    position: absolute;
+    width: 71px;
+    height: 72px;
+    background: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/mariowalking/result.png") left center;
+    top: -70px;
+    left: 0px;
+    -webkit-animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+    animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
+}
+
+.profile-image-pic {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 2px solid #0e1c36;
+}
+
+.cardbody-color {
+    background-color: transparent;
+}
+
+.btn-color {
+    background-color: #0e1c36;
+    color: #fff;
+}
+
+    .btn-color:hover {
+        background-color: #00152e;
+        color: #fff;
+    }
+
+a {
+    text-decoration: none;
+}
+
+.skyblocks {
+    position: absolute;
+    top: -250px;
+}
+
+.p-30 {
+    padding-top: 30px;
+}
+.m-40 {
+    padding-top: 40px;
+}
+
+.g-canvas {
+    background-color: black;
+    border: 10px solid #ffffff;
+}
+
+.w-120 {
+    width: 120px;
+}
+
+.vsbl {
+    visibility: hidden;
+}
+
+.header-txt {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.m-10 {
+    margin-top: 10px;
+}
+
+.m-20 {
+    margin-top: 20px;
+}
+
+.w-100-p {
+    width: 100%;
+}

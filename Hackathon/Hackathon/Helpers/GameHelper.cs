@@ -1,5 +1,6 @@
 ﻿using Hackathon.DAL.Models;
 using Hackathon.UI.Interfaces;
+using Hackathon.UI.Models;
 using HackathonDAL;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,6 +40,28 @@ namespace Hackathon.UI.Helpers
             {
                 return new Games();
             }
+        }
+
+        public async Task<bool> GameStatus(GameRequestModel dataModel)
+        {
+            var game = await _dbmssql.Games.FirstOrDefaultAsync(ok => ok.GameKey == Guid.Parse(dataModel.gameID));
+
+            if (game.Gamer1Key == Guid.Parse(dataModel.gamerID))
+            {
+                if (game.Gamer2Finish)
+                {
+                    return true;
+                }
+            }
+            else if (game.Gamer2Key == Guid.Parse(dataModel.gamerID))
+            {
+                if (game.Gamer1Finish)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

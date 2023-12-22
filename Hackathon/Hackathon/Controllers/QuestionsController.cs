@@ -20,7 +20,7 @@ namespace Hackathon.UI.Controllers
             _questionHelper = questionHelper;
         }
 
-        public async Task<QuestionReturnModel> GetQuestions([FromBody] GameRequestMode dataModel)
+        public async Task<QuestionReturnModel> GetQuestions([FromBody] GameRequestModel dataModel)
         {
             return await _questionHelper.GetQuestions(Guid.Parse(dataModel.gameID), Guid.Parse(dataModel.gamerID));
         }

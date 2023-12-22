@@ -54,7 +54,7 @@ namespace Hackathon.UI.Helpers
 
                 game.Gamer1Question++;
 
-                if (game.Gamer1Question == 10)
+                if (game.Gamer1Question > 10)
                 {
                     game.Gamer1Finish = true;
                 }
@@ -72,7 +72,7 @@ namespace Hackathon.UI.Helpers
 
                 game.Gamer2Question++;
 
-                if (game.Gamer2Question == 10)
+                if (game.Gamer2Question > 10)
                 {
                     game.Gamer2Finish = true;
                 }
@@ -87,35 +87,47 @@ namespace Hackathon.UI.Helpers
 
         public QuestionReturnModel MergeQuestions(Games games, Questions questions)
         {
-            if (games == null || questions == null)
+            if (games == null && questions == null)
             {
                 return new QuestionReturnModel();
             }
             else
             {
-                return new QuestionReturnModel
+                if (games != null && questions == null)
                 {
-                    ID = games.ID,
-                    QuestionNumber = questions.QuestionNumber,
-                    QuestionTR = questions.QuestionTR,
-                    QuestionEN = questions.QuestionEN,
+                    return new QuestionReturnModel
+                    {
+                        Gamer1Finish = games.Gamer1Finish,
+                        Gamer2Finish = games.Gamer2Finish,
+                    };
+                    
+                }
+                else
+                {
+                    return new QuestionReturnModel
+                    {
+                        ID = games.ID,
+                        QuestionNumber = questions.QuestionNumber,
+                        QuestionTR = questions?.QuestionTR,
+                        QuestionEN = questions.QuestionEN,
 
-                    ChoiseA = questions.ChoiseA,
-                    ChoiseB = questions.ChoiseB,
-                    ChoiseC = questions.ChoiseC,
-                    ChoiseD = questions.ChoiseD,
+                        ChoiseA = questions.ChoiseA,
+                        ChoiseB = questions.ChoiseB,
+                        ChoiseC = questions.ChoiseC,
+                        ChoiseD = questions.ChoiseD,
 
 
-                    GameKey = games.GameKey,
-                    Gamer1Key = games.Gamer1Key,
-                    Gamer2Key = games.Gamer2Key,
-                    Gamer1Point = games.Gamer1Point,
-                    Gamer2Point = games.Gamer2Point,
-                    Gamer1Question = games.Gamer1Question,
-                    Gamer2Question = games.Gamer2Question,
-                    Gamer1Finish = games.Gamer1Finish,
-                    Gamer2Finish = games.Gamer2Finish,
-                };
+                        GameKey = games.GameKey,
+                        Gamer1Key = games.Gamer1Key,
+                        Gamer2Key = games.Gamer2Key,
+                        Gamer1Point = games.Gamer1Point,
+                        Gamer2Point = games.Gamer2Point,
+                        Gamer1Question = games.Gamer1Question,
+                        Gamer2Question = games.Gamer2Question,
+                        Gamer1Finish = games.Gamer1Finish,
+                        Gamer2Finish = games.Gamer2Finish,
+                    };
+                }
             }
 
         }

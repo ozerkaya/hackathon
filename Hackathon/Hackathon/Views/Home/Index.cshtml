@@ -1,63 +1,52 @@
-﻿<!DOCTYPE html>
+﻿@model Hackathon.UI.Models.CreateModel
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .profile-image-pic {
-            height: 200px;
-            width: 200px;
-            object-fit: cover;
-            border: 2px solid #0e1c36;
-        }
-
-        .cardbody-color {
-            background-color: #ebf2fa;
-        }
-
-        .btn-color {
-            background-color: #0e1c36;
-            color: #fff;
-        }
-
-            .btn-color:hover {
-                background-color: #00152e;
-                color: #fff;
-            }
-
-        a {
-            text-decoration: none;
-        }
-    </style>
+    <link href="~/css/mario.css" rel="stylesheet" />
 </head>
 
-<body>
 
+
+<body>
+    <video autoplay muted loop id="myVideo" style="width:100%;position: absolute;height:auto;">
+        <source src="~/videos/back1.mp4" type="video/mp4" />
+    </video>
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 150px;">
-                <div class="card my-5">
 
-                    <form class="card-body cardbody-color p-lg-5" id="loginForm">
 
+                <form class="card-body cardbody-color p-lg-5" id="loginForm">
+
+                    <div class="text-center">
+                        <img src="/images/codechallenge.jpg" class="img-fluid img-thumbnail my-3" alt="profile">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-lg btn-two w-100-p" onclick="createGame();">Oyun Oluştur</button>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-lg btn-two w-100-p m-20" data-toggle="modal" data-target="#loginModal">Oyuna Gir </button>
+                    </div>
+
+                    @if (Model.winnerOrLoser == "loser")
+                    {
                         <div class="text-center">
-                            <img src="https://e1.pxfuel.com/desktop-wallpaper/762/285/desktop-wallpaper-4-moving-snake-cartoon-snake.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" alt="profile">
+                            <button type="button" class="btn btn-lg btn-two w-100-p m-20" style="background:#ff3131;">Malesef Kaybettin!</button>
                         </div>
+                    }
+                    else if (Model.winnerOrLoser == "winner")
+                    {
+                        <div class="text-center">
+                            <button type="button" class="btn btn-lg btn-two w-100-p m-20" style="background:#4fd369;">Tebrikler Kazandın!</button>
+                        </div>
+                    }
+                </form>
 
-                        <div class="text-center"><button type="button" class="btn btn-color px-5 mb-5 w-100" onclick="createGame();">Oyun Oluştur</button></div>
-                        <div class="text-center"><button type="button" class="btn btn-color px-5 mb-5 w-100" data-toggle="modal" data-target="#loginModal">Oyuna Gir </button></div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>
@@ -85,47 +74,13 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies (optional) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script>
-    function createGame() {
 
-        $.ajax({
-            type: 'POST',
-            url: '/Game/CreateGame',
-            contentType: 'application/json; charset=utf-8',
-            success: function (result) {
-                window.location.href = "/Home/Game?GameKey=" + result.gameKey + "&&GamerKey=" + result.gamer1Key;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert("Sıralama işlemi yapılamadı!");
-            }
-        });
-    }
-
-    function connectGame() {
-
-        let friendKey = document.getElementById("friendKey").value;
-
-        $.ajax({
-            type: 'POST',
-            url: '/Game/CreateGame',
-            contentType: 'application/json; charset=utf-8',
-            success: function (result) {
-                window.location.href = "/Home/Game2?GameKey=" + friendKey;
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert("Sıralama işlemi yapılamadı!");
-            }
-        });
-    }
-</script>
 
     <script>
-        // Optional: JavaScript to trigger the modal when the form is submitted
         document.getElementById('loginForm').addEventListener('submit', function (event) {
             event.preventDefault();
             $('#loginModal').modal('show');

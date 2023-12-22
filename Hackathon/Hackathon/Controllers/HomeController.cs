@@ -22,9 +22,14 @@ namespace Hackathon.Controllers
             _questionHelper = questionHelper;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string winnerOrLoser)
         {
-            return View();
+            CreateModel model = new CreateModel();
+            if(!string.IsNullOrWhiteSpace(winnerOrLoser))
+            {
+                model.winnerOrLoser = winnerOrLoser;
+            }
+            return View(model);
         }
 
         public IActionResult Game(string GameKey, string GamerKey)

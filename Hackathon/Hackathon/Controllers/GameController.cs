@@ -1,5 +1,6 @@
 ﻿using Hackathon.DAL.Models;
 using Hackathon.UI.Interfaces;
+using Hackathon.UI.Models;
 using HackathonDAL;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,6 +24,11 @@ namespace Hackathon.UI.Controllers
         public async Task<Games> CreateGame()
         {
             return await _gameHelper.CreateGame();
+        }
+
+        public async Task<bool> GameStatus([FromBody] GameRequestModel dataModel)
+        {
+            return await _gameHelper.GameStatus(dataModel);
         }
 
     }

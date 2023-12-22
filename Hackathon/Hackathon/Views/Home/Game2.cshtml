@@ -1,181 +1,20 @@
 ﻿@model Hackathon.UI.Models.QuestionReturnModel
 
-@{
-    Layout = null;
-}
-
-
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
-<style>
-    .btn-two {
-        color: #FFF;
-        transition: all 0.5s;
-        position: relative;
-    }
-
-        .btn-two span {
-            z-index: 2;
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .btn-two::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            transition: all 0.5s;
-            border: 1px solid rgba(255,255,255,0.2);
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .btn-two::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            transition: all 0.5s;
-            border: 1px solid rgba(255,255,255,0.2);
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .btn-two:hover::before {
-            transform: rotate(-45deg);
-            background-color: rgba(255,255,255,0);
-        }
-
-        .btn-two:hover::after {
-            transform: rotate(45deg);
-            background-color: rgba(255,255,255,0);
-        }
-
-    html,
-    body {
-        font-family: "Press Start 2P", cursive;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-    }
-
-    .sky,
-    .ground {
-        position: relative;
-    }
-
-    .sky {
-        height: 100%;
-        background-color: #548cff !important;
-        background: url("/images/back2.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: bottom;
-        background-size: cover;
-    }
-
-    .ground {
-        height: 10%;
-        background-color: #c84c0c;
-        background-image: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/groundblock.png");
-    }
-
-    .scorebar {
-        position: absolute;
-        height: 120px;
-        width: 100%;
-        font-family: "Press Start 2P", cursive;
-        font-size: 180%;
-        color: white;
-        padding-left: 50px;
-        padding-right: 50px;
-        line-height: 0.2;
-    }
-
-    .cloud {
-        position: absolute;
-        height: 100px;
-    }
-
-        .cloud:nth-child(2) {
-            top: 120px;
-            -webkit-animation: wind 80s both infinite linear reverse;
-            animation: wind 80s both infinite linear reverse;
-        }
-
-        .cloud:nth-child(3) {
-            top: 280px;
-            -webkit-animation: wind 50s both infinite linear reverse;
-            animation: wind 50s both infinite linear reverse;
-        }
-
-        .cloud:nth-child(4) {
-            top: 450px;
-            -webkit-animation: wind 30s both infinite linear reverse;
-            animation: wind 30s both infinite linear reverse;
-        }
-
-    .skyblocks {
-        position: absolute;
-        top: -250px;
-    }
-
-    .brick {
-        position: fixed;
-        margin: -2px;
-    }
-
-        .brick:nth-child(1) {
-            left: 600px;
-        }
-
-        .brick:nth-child(2) {
-            left: 670px;
-        }
-
-        .brick:nth-child(3) {
-            left: 740px;
-        }
-
-        .brick:nth-child(4) {
-            left: 810px;
-        }
-
-    .mario {
-        position: absolute;
-        width: 71px;
-        height: 72px;
-        background: url("https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/mariowalking/result.png") left center;
-        top: -70px;
-        left: 0px;
-        -webkit-animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
-        animation: play 0.8s steps(4) infinite, run 7s both infinite linear;
-    }
-</style>
-
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 <div class="sky">
-    <div class="row" style="padding-top: 30px;">
+
+    <div class="row p-30">
         <div class="col-3">
-            <center><span style="color: #ffffff;font-size:20px;">GAMER1</span></center>
+            <center><span class="header-txt">GAMER1</span></center>
         </div>
         <div class="col-6">
-            @*<center><h3 id="soru" style="color: #ffffff;"></h3></center>*@
         </div>
         <div class="col-3">
-            <center><span style="color: #ffffff;font-size:20px;">GAMER2</span></center>
+            <center><span class="header-txt">GAMER2</span></center>
         </div>
     </div>
-    <div class="row" style="margin-top:40px;">
+    <div class="row m-40">
         <div class="col-3">
             <center>
                 <img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40"> <span class="bottomline-score" id="gamer1Point" style="color: #ffffff;font-size:20px;">0</span>
@@ -188,32 +27,7 @@
                 <span class="bottomline-time" id="gamer2Point" style="color: #ffffff;font-size:20px;">0</span><img src="https://raw.githubusercontent.com/LantareCode/random-this-and-thats/master/CSS/SuperMario-Animation/images/Coin.gif" height="40">
             </center>
         </div>
-        <div class="scorebar">
-
-            <p style="
-               padding-top: 20px;">
-
-
-
-            </p>
-        </div>
     </div>
-
-
-
-    <div>
-        <div class="row">
-
-
-
-
-
-            @* <span class="topline-world" style="font-size:20px;">@Model.GameKey</span>*@
-
-
-        </div>
-    </div>
-
     <center>
         <p>
             @Html.HiddenFor(ok => ok.GameKey)
@@ -221,23 +35,19 @@
             @Html.HiddenFor(ok => ok.Gamer1Question)
         </p>
 
+        <canvas class="card-box g-canvas" width="400" height="400" id="game"></canvas>
 
-
-        <canvas class="card-box" width="400" height="400" id="game" style="background-color:black;border: 10px solid #ffffff;"></canvas>
-
-
-        <p style="margin-top:30px;" id="loginForm">
-
-            <a class="btn btn-lg btn-two" href="/Home/Index" style="width:120px;">Pes Et !</a>
-
-            <div class="text-center"><button id="openModalBtn" type="button" class="btn btn-color px-5 mb-5 w-100" style="visibility:hidden;" data-toggle="modal" data-target="#loginModal" onclick="getQuestion();">Oyuna Gir </button></div>
-            <button class="btn btn-lg btn-two" type="button" style="width:120px;visibility:hidden;" onclick="getQuestion();">
+        <p class="m-40" id="loginForm">
+            <a class="btn btn-lg btn-two w-120" href="/Home/Index">Pes Et !</a>
+            <div class="text-center">
+                <button id="openModalBtn" type="button" class="btn btn-color px-5 mb-5 w-100 vsbl" data-toggle="modal" data-target="#loginModal" onclick="getQuestion();">Oyuna Gir </button>
+            </div>
+            <button class="btn btn-lg btn-two w-120 vsbl" type="button" onclick="getQuestion();">
                 Başla
             </button>
         </p>
 
     </center>
-
     <script>
         var canvas = document.getElementById('game');
         var context = canvas.getContext('2d');
@@ -342,134 +152,98 @@
     </script>
 
 
-
-
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 id="soru"></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <center>
-                            <table class="table" style="width:700px;border:none;">
-                                <thead>
-                                    <tr>
-                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('A');">A</button></th>
-                                        <th scope="col" style="border:none;"><label id="question1"></label></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row" style="width: 135px;border:none;"> <button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('B');">B</button></th>
-                                        <td style="border:none;"><label id="question2"></label></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('C');">C</button></th>
-                                        <td style="border:none;"><label id="question3"></label></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" style="width: 135px;border:none;"><button class="btn btn-lg btn-primary btn-block" type="button" style="width:120px;" onclick="setQuestion('D');">D</button></th>
-                                        <td style="border:none;"><label id="question4"></label></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </center>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="connectGame();">Onayla</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModal">Kapat</button>
+                <div class="modal-body" style="background:#052342;">
+                    <table class="table" style="width:700px;border:none;">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" style="width: 135px;border:none;">
+                                    <button class="btn btn-lg btn-two w-120" type="button" onclick="setQuestion('A','2');">A</button>
+                                </th>
+                                <th style="border:none;">
+                                    <label class="header-txt m-10" id="question1"></label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 135px;border:none;">
+                                    <button class="btn btn-lg btn-two w-120" type="button" onclick="setQuestion('B','2');">B</button>
+                                </th>
+                                <th style="border:none;">
+                                    <label class="header-txt m-10" id="question2"></label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 135px;border:none;">
+                                    <button class="btn btn-lg btn-two w-120" type="button" onclick="setQuestion('C','2');">C</button>
+                                </th>
+                                <th style="border:none;">
+                                    <label class="header-txt m-10" id="question3"></label>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th scope="row" style="width: 135px;border:none;">
+                                    <button class="btn btn-lg btn-two w-120" type="button" onclick="setQuestion('D','2');">D</button>
+                                </th>
+                                <th style="border:none;">
+                                    <label class="header-txt m-10" id="question4"></label>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 
 <script>
-    function getQuestion() {
+    $(document).ready(function () {
+        sleep = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
+        Refresh();
+    });
 
-        let gameID = document.getElementById("GameKey").value;
-        let gamerID = document.getElementById("Gamer1Key").value;
+    async function Refresh() {
+        for (let i = 0; i < 100; i++) {
+            await sleep(3 * 1000);
 
-        $.ajax({
-            type: 'POST',
-            url: '/Questions/GetQuestions',
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify({ gameID, gamerID }),
-            success: function (result) {
+            let gameID = document.getElementById("GameKey").value;
+            let gamerID = document.getElementById("Gamer1Key").value;
 
-                document.getElementById('soru').innerHTML = result.questionTR;
-                document.getElementById('question1').innerHTML = result.choiseA;
-                document.getElementById('question2').innerHTML = result.choiseB;
-                document.getElementById('question3').innerHTML = result.choiseC;
-                document.getElementById('question4').innerHTML = result.choiseD;
-
-                if (result.gamer1Point != undefined) {
-                    document.getElementById('gamer1Point').innerHTML = result.gamer1Point;
+            $.ajax({
+                type: 'POST',
+                url: '/Game/GameStatus',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify({ gameID, gamerID }),
+                success: function (result) {
+                    console.log(result);
+                    if (result == true) {
+                        window.location.href = "/Home/Index?winnerOrLoser=loser";
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("Sıralama işlemi yapılamadı!");
                 }
-                if (result.gamer1Point != undefined) {
-                    document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
-                }
+            });
 
-                document.getElementById("closeModal").click();
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert("Sıralama işlemi yapılamadı!");
-            }
-        });
-    }
-
-    function setQuestion(answer) {
-
-        let gameID = document.getElementById("GameKey").value;
-        let gamerID = document.getElementById("Gamer1Key").value;
-        let questionNumber = document.getElementById("Gamer1Question").value;
-
-        $.ajax({
-            type: 'POST',
-            url: '/Questions/SetAnswer',
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify({ gameID, gamerID, questionNumber, answer }),
-            success: function (result) {
-
-                document.getElementById('soru').innerHTML = result.questionTR;
-                document.getElementById('question1').innerHTML = result.choiseA;
-                document.getElementById('question2').innerHTML = result.choiseB;
-                document.getElementById('question3').innerHTML = result.choiseC;
-                document.getElementById('question4').innerHTML = result.choiseD;
-                document.getElementById('Gamer1Question').value = result.gamer1Question;
-
-                if (result.gamer1Point != undefined) {
-                    document.getElementById('gamer1Point').innerHTML = result.gamer1Point;
-                }
-                if (result.gamer1Point != undefined) {
-                    document.getElementById('gamer2Point').innerHTML = result.gamer2Point;
-                }
-
-                document.getElementById("closeModal").click();
-
-            },
-            error: function (xhr, ajaxOptions, thrownError) {
-                alert("Sıralama işlemi yapılamadı!");
-            }
-        });
-    }
-
-
+            i = 1;
+        }
+    };
 </script>
 
 <script>
-    // Optional: JavaScript to trigger the modal when the form is submitted
+
     document.getElementById('loginForm').addEventListener('submit', function (event) {
         event.preventDefault();
         $('#loginModal').modal('show');
